@@ -44,7 +44,7 @@ export default function City({weather}: CityData): JSX.Element {
       <p>{weather.main.temp}</p>
       <p>{weather.main.temp_min}</p>
       <p>{weather.main.temp_max}</p>
-      <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}/>
+      <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}/>
       <Week id={weather.id}/>
     </div>
   );
