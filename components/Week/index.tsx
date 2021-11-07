@@ -36,7 +36,7 @@ export default function Week(props:{id:number}): JSX.Element{
                     <div key={day.dt}>
                         <p>{day.main.temp}</p>
                         <p>{day.weather[0].description}</p>
-                        <img src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}/>
+                        <img src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}/>
                     </div>
                 ))}
             </div>
