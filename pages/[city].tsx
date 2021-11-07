@@ -1,4 +1,5 @@
 import { GetServerSideProps } from "next";
+import Week from "../components/Week";
 interface CityData {
     weather:{
     name: string;
@@ -7,6 +8,7 @@ interface CityData {
       temp_min: number;
       temp_max: number;
     };
+    id: number;
     weather: [
       {
         description: string;
@@ -15,6 +17,9 @@ interface CityData {
     ];
   }
 }
+type IntrinsicAttributes = {
+  id: number;
+};
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const city = context.query.city;
   const response = await fetch(
@@ -40,6 +45,7 @@ export default function City({weather}: CityData): JSX.Element {
       <p>{weather.main.temp_min}</p>
       <p>{weather.main.temp_max}</p>
       <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}/>
+      <Week id={weather.id}/>
     </div>
   );
 }
