@@ -27,7 +27,7 @@ export default function HomePage(): JSX.Element {
     const onSubmit = (e: FormSubmitEvent) => {
         e.preventDefault();
         if (city) {
-            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
                 .then(res => res.json())
                 .then(data => {
                     setCities([...cities, data]);
@@ -66,7 +66,7 @@ export default function HomePage(): JSX.Element {
                     <p>Temperatura actual: {city.main.temp}</p>
                     <p>Min: {city.main.temp_min}</p>
                     <p>Max: {city.main.temp_max}</p>
-                    <img src={`http://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png`}/>
+                    <img src={`https://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png`}/>
                 </div>
             ))}
       </div>
