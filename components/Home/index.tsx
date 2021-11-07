@@ -39,9 +39,9 @@ export default function HomePage(): JSX.Element {
         }
     }
   return (
-    <div>
+    <div className="container">
         <h1>
-          Home
+          Weather App
         </h1>
         <form
         onSubmit={onSubmit}
@@ -51,21 +51,25 @@ export default function HomePage(): JSX.Element {
             type="search"
             value={city}
             onChange={onChange}
+            className="search"
             />
         </form>
-        <div>
+        <div className="card-container">
             {cities.map((city, index) => (
-                <div 
+                <div
+                className="card" 
                 key={city.id}
                 >
-                    <h2>
-                        <Link href={`/${city.id}`}>
-                            {city.name}
-                        </Link>
-                    </h2>
-                    <p>Temperatura actual: {city.main.temp}</p>
-                    <p>Min: {city.main.temp_min}</p>
-                    <p>Max: {city.main.temp_max}</p>
+                    <div>
+                        <h2>
+                            <Link href={`/${city.id}`}>
+                                {city.name}
+                            </Link>
+                        </h2>
+                        <p>Temperatura actual: {city.main.temp}</p>
+                        <p>Min: {city.main.temp_min}</p>
+                        <p>Max: {city.main.temp_max}</p>
+                    </div>
                     <img src={`https://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png`}/>
                 </div>
             ))}
