@@ -1,5 +1,7 @@
 $primary: #FFD166;
 $secondary: #EF476F;
+$blue: #118AB2;
+$green: #06D6A0;
 
 body{
     font-family: Roboto;
@@ -41,4 +43,58 @@ body{
             margin-left: 1rem;
         }
     }
+}
+.home{
+    background-color: $green;
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 2rem;
+    text-decoration: none;
+    width: 100%;
+}
+.city-container{
+    text-align: center;
+    background-color: $green;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 4px;
+    padding-top: 0.3rem;
+    h1{
+        margin-bottom: 1rem;
+        align-items: flex-start;
+    }
+}
+.week{
+    text-align: center;
+    align-items: center;
+}
+
+.weather-container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+        .weather-card{
+            display: flex;
+            background-color: $blue;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            width: 80%;
+            div{
+                margin: 0 auto;
+            }
+            h2{
+                margin-left: 1rem;
+            }
+            p{
+                margin-left: 1rem;
+            }
+            img{
+                width: 10%;
+                height: 10%;
+                margin: 0 auto;
+            }
+        }
 }

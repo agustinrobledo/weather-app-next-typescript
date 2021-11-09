@@ -1,5 +1,6 @@
 import { GetServerSideProps } from "next";
 import Week from "../components/Week";
+import Link from "next/link";
 interface CityData {
     weather:{
     name: string;
@@ -37,16 +38,20 @@ const apiKey: String = "7796135672a1ef998330890d3fb9eb22"
 export default function City({weather}: CityData): JSX.Element {
   console.log(weather)
   return (
-    <div>
-      <h1>City</h1>
-      <p>{weather.name}</p>
+    <>
+    <Link href="/">
+      <a className="home">Home</a>
+    </Link>
+    <div className="city-container">
+      <h1>{weather.name}</h1>
       <p>{weather.weather[0].description}</p>
       <p>{weather.main.temp}</p>
       <p>{weather.main.temp_min}</p>
       <p>{weather.main.temp_max}</p>
       <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}/>
-      <Week id={weather.id}/>
     </div>
+      <Week id={weather.id}/>
+    </>
   );
 }
 
