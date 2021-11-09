@@ -44,10 +44,10 @@ export default function City({weather}: CityData): JSX.Element {
     </Link>
     <div className="city-container">
       <h1>{weather.name}</h1>
-      <p>{weather.weather[0].description}</p>
-      <p>{weather.main.temp}</p>
-      <p>{weather.main.temp_min}</p>
-      <p>{weather.main.temp_max}</p>
+      <p><strong>{weather.weather[0].description}</strong></p>
+      <p><strong>Actual temp</strong>: {weather.main.temp}</p>
+      <p><strong>Min</strong>: {weather.main.temp_min}</p>
+      <p><strong>Max</strong>: {weather.main.temp_max}</p>
       <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}/>
     </div>
       <Week id={weather.id}/>
