@@ -47,7 +47,7 @@ export default function HomePage(): JSX.Element {
         onSubmit={onSubmit}
         >
             <input 
-            placeholder="Busca tu ciudad"
+            placeholder="Search your city"
             type="search"
             value={city}
             onChange={onChange}
