@@ -30,8 +30,12 @@ export default function HomePage(): JSX.Element {
             fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
                 .then(res => res.json())
                 .then(data => {
-                    setCities([...cities, data]);
-                    setCity("");
+                    if (data.cod === "404") {
+                        alert("City not found");
+                    } else {
+                        setCities([...cities, data]);
+                        setCity("");
+                    }
                 })
                 .catch(err => {
                     console.log(err);
@@ -55,7 +59,7 @@ export default function HomePage(): JSX.Element {
             />
         </form>
         <div className="card-container">
-            {cities.map((city, index) => (
+            {cities?.map((city, index) => (
                 <div
                 className="card" 
                 key={city.id}
